@@ -9,24 +9,27 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ThirdTestCase {
+public class HrisTest {
 
 	public static void main(String[] args) {
 	
 		System.setProperty("webdriver.gecko.driver","/usr/local/share/gecko_driver/geckodriver");
 		WebDriver driver = new FirefoxDriver();
-   
 		driver.manage().window().maximize();
-		String url = "https://accounts.google.com/signin";
+		String url = "https://hris.qainfotech.com/login.php";
 		driver.get(url);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); 
-		WebElement email_phone = driver.findElement(By.xpath("//input[@id='identifierId']"));
-		email_phone.sendKeys("piyushghildiyal074@gmail.com");
-		driver.findElement(By.id("identifierNext")).click();
-		WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
+		WebElement email_phone = driver.findElement(By.xpath("//input[@id='txtUserName']"));
+		email_phone.sendKeys("enter your username");
+		driver.findElement(By.id("txtUserName")).click();
+		WebElement password = driver.findElement(By.xpath("//input[@name='txtPassword']"));
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.elementToBeClickable(password));
-		password.sendKeys("");
-		driver.findElement(By.id("passwordNext")).click();
+				
+		
+		password.sendKeys("Enter your password here");
+		driver.findElement(By.id("txtPassword")).click();
+		password.submit();
+		
 	}
 }

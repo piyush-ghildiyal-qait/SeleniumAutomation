@@ -25,7 +25,4 @@ public class SecondTestCase {
 Thread.sleep(5000);
          driver.close();
     }
-
-
-
 }

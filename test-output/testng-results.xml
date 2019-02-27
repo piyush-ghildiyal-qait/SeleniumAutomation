@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="7029" started-at="2019-02-26T09:27:11Z" finished-at="2019-02-26T09:27:18Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="7029" started-at="2019-02-26T09:27:11Z" finished-at="2019-02-26T09:27:18Z">
+      <class name="automationFramework.SeventhTestCase">
+        <test-method status="PASS" signature="setup()[pri:0, instance:automationFramework.SeventhTestCase@724af044]" name="setup" is-config="true" duration-ms="4127" started-at="2019-02-26T09:27:11Z" finished-at="2019-02-26T09:27:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="testLinks(java.util.ArrayList)[pri:0, instance:automationFramework.SeventhTestCase@724af044]" name="testLinks" duration-ms="2887" started-at="2019-02-26T09:27:15Z" data-provider="linkProvider" finished-at="2019-02-26T09:27:18Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[A/B Testing, Basic Auth, Broken Images, Challenging DOM, Checkboxes, Context Menu, Disappearing Elements, Drag and Drop, Dropdown, Dynamic Content, Dynamic Controls, Dynamic Loading, Exit Intent, File Download, File Upload, Floating Menu, Forgot Password, Form Authentication, Frames, Geolocation, Horizontal Slider, Hovers, Infinite Scroll, JQuery UI Menus, JavaScript Alerts, JavaScript onload event error, Key Presses, Large & Deep DOM, Multiple Windows, Nested Frames, Notification Messages, Redirect Link, Secure File Download, Shifting Content, Slow Resources, Sortable Data Tables, Status Codes, Typos, WYSIWYG Editor]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLinks -->
+      </class> <!-- automationFramework.SeventhTestCase -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

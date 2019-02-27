@@ -9,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ThirdTestCase {
+public class ComposingMail {
 
 	public static void main(String[] args) {
 	
@@ -28,5 +28,38 @@ public class ThirdTestCase {
 		wait.until(ExpectedConditions.elementToBeClickable(password));
 		password.sendKeys("");
 		driver.findElement(By.id("passwordNext")).click();
+		driver.findElement(By.xpath("//div[contains(text(),'COMPOSE')]")).click();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 }
