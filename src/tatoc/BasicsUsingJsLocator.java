@@ -2,12 +2,13 @@ package tatoc;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
-public class BasicsUsingCssSelector {
+public class BasicsUsingJsLocator {
 
 	
 	
@@ -23,26 +24,27 @@ public class BasicsUsingCssSelector {
         driver.manage().window().maximize();
         
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector(".page a[href='/tatoc/basic']")).click();
-	
-  
-// ------------------------------------------  Green Grid ---------------------------------
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("document.getElementsByTagName('a')[0].click();");
         
-        
-        driver.findElement(By.cssSelector(".greenbox[onclick='passthru();']")).click();
         
         Thread.sleep(1000);
+        jse.executeScript("document.getElementsByClassName('greenbox')[0].click();");
         
-//------------------------------------------  Frame Dungeon ----------------        
        
+//-------------------------------------- Frame Dungeon ---------------------        
         
 driver.switchTo().frame("main");	        
 
         
-String cl1 = driver.findElement(By.cssSelector("center>#answer")).getAttribute("class");
+String cl1 = (String) jse.executeScript("return document.getElementById('answer').getAttribute('class');");
+
+
 driver.switchTo().frame(driver.findElement(By.id("child")));
 
-String cl2= driver.findElement(By.cssSelector("body>div[id='answer']")).getAttribute("class");
+
+
+String cl2 = (String) jse.executeScript("return document.getElementById('answer').getAttribute('class');");
 
 driver.switchTo().defaultContent();
 driver.switchTo().frame(driver.findElement(By.id("main")));
@@ -50,18 +52,15 @@ driver.switchTo().frame(driver.findElement(By.id("main")));
 
 
 while(!cl1.equals(cl2)) {
-//System.out.println("col1="+cl1);
-//System.out.println("col2="+cl2);
-//System.out.println("boolean="+cl1.equals(cl2));
 
 driver.switchTo().defaultContent();
 driver.switchTo().frame(driver.findElement(By.id("main")));
 
-driver.findElement(By.cssSelector("a[onclick='reloadChildFrame();']")).click();
+jse.executeScript("document.getElementsByTagName('a')[0].click();");
 
 
 driver.switchTo().frame(driver.findElement(By.id("child")));
-cl2= driver.findElement(By.cssSelector(("body>div[id='answer']"))).getAttribute("class");
+cl2 = (String) jse.executeScript("return document.getElementById('answer').getAttribute('class');");
 
 Thread.sleep(1000);
 }
@@ -71,79 +70,76 @@ Thread.sleep(1000);
 driver.switchTo().defaultContent();
 driver.switchTo().frame(driver.findElement(By.id("main")));
 
-driver.findElement(By.cssSelector("a[onclick='gonext();']")).click();
-        
+jse.executeScript("document.getElementsByTagName('a')[1].click();");
         
 
 //------------------------------------------ Drag Drop -----------------------
 
 
-WebElement From=driver.findElement(By.cssSelector(".ui-draggable"));	
+WebElement From=(WebElement) jse.executeScript("return document.getElementsByClassName('ui-draggable')[0];");
+
 System.out.println(From);
-//Element on which need to drop.		
-WebElement To=driver.findElement(By.cssSelector("div #dropbox"));					
-		System.out.println(To);
+//Element on which need to drop.
+
+
+WebElement To=(WebElement) jse.executeScript("return document.getElementById('dropbox');");
+
+System.out.println(To);
 //Using Action class for drag and drop.		
 Actions act=new Actions(driver);					
 
-//Dragged and dropped.		
 act.dragAndDrop(From, To).build().perform();	
 
 Thread.sleep(1000);
-driver.findElement(By.cssSelector("a[onclick='gonext();']")).click();
-        
-        
+
+jse.executeScript("document.getElementsByTagName('a')[0].click();");
+
+
 
 //-------------------------   Pop Up windows ---------------------
 
 
 String winHandleBefore = driver.getWindowHandle();
 Thread.sleep(1000);
-//Perform the click operation that opens new window
-driver.findElement(By.cssSelector("a[onclick='launchwindow();']")).click();
+jse.executeScript("document.getElementsByTagName('a')[0].click();");
 
-//Switch to new window opened
 for(String winHandle : driver.getWindowHandles()){
 driver.switchTo().window(winHandle);
 }
 
-//Perform the actions on new window
 Thread.sleep(2000);	     
-driver.findElement(By.cssSelector("#name")).sendKeys("piyush ghildiyal");
+jse.executeScript("document.getElementById('name').value ='Johnny Bravo';");
 Thread.sleep(2000);
-driver.findElement(By.cssSelector("#submit")).click();   
+jse.executeScript("document.getElementById('submit').click();");
 
 //Switch back to original browser (first window)
 driver.switchTo().window(winHandleBefore);
-  
-driver.findElement(By.cssSelector("a[onclick='gonext();']")).click();
 
-        
+jse.executeScript("document.getElementsByTagName('a')[1].click();");
+
+
 
 //--------------------------------------  Cookie Handling ------------------------------
 
-driver.findElement(By.cssSelector("a[onclick='generateToken();']")).click();
+jse.executeScript("document.getElementsByTagName('a')[0].click();");
 
 
-String token=driver.findElement(By.cssSelector("span[id='token']")).getText();
 
+String token=(String) jse.executeScript("return document.getElementById('token').innerText;");
 String[] tokenNo = token.split(":");
 
-//System.out.println(tokenNo[1].trim());
 
 Cookie ck=new Cookie("Token",tokenNo[1].trim());
 
 driver.manage().addCookie(ck);
 
 Thread.sleep(1000);
-driver.findElement(By.cssSelector("a[onclick='gonext();']")).click();
 
-Thread.sleep(1000);
-
-driver.close();
-
-  
-	}
+jse.executeScript("document.getElementsByTagName('a')[1].click();");
+     
+        Thread.sleep(2000);
+        driver.close();
 	
+	}
 	
 }
