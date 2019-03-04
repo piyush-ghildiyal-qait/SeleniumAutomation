@@ -1,28 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="7029" started-at="2019-02-26T09:27:11Z" finished-at="2019-02-26T09:27:18Z">
+  <suite name="Default suite" duration-ms="2251" started-at="2019-03-04T13:54:17Z" finished-at="2019-03-04T13:54:19Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="7029" started-at="2019-02-26T09:27:11Z" finished-at="2019-02-26T09:27:18Z">
-      <class name="automationFramework.SeventhTestCase">
-        <test-method status="PASS" signature="setup()[pri:0, instance:automationFramework.SeventhTestCase@724af044]" name="setup" is-config="true" duration-ms="4127" started-at="2019-02-26T09:27:11Z" finished-at="2019-02-26T09:27:15Z">
+    <test name="Default test" duration-ms="2251" started-at="2019-03-04T13:54:17Z" finished-at="2019-03-04T13:54:19Z">
+      <class name="test.TestCasesOfBasicTatoc">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:test.TestCasesOfBasicTatoc@685cb137]" name="launchBrowser" is-config="true" duration-ms="1650" started-at="2019-03-04T13:54:17Z" finished-at="2019-03-04T13:54:18Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="testLinks(java.util.ArrayList)[pri:0, instance:automationFramework.SeventhTestCase@724af044]" name="testLinks" duration-ms="2887" started-at="2019-02-26T09:27:15Z" data-provider="linkProvider" finished-at="2019-02-26T09:27:18Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[A/B Testing, Basic Auth, Broken Images, Challenging DOM, Checkboxes, Context Menu, Disappearing Elements, Drag and Drop, Dropdown, Dynamic Content, Dynamic Controls, Dynamic Loading, Exit Intent, File Download, File Upload, Floating Menu, Forgot Password, Form Authentication, Frames, Geolocation, Horizontal Slider, Hovers, Infinite Scroll, JQuery UI Menus, JavaScript Alerts, JavaScript onload event error, Key Presses, Large & Deep DOM, Multiple Windows, Nested Frames, Notification Messages, Redirect Link, Secure File Download, Shifting Content, Slow Resources, Sortable Data Tables, Status Codes, Typos, WYSIWYG Editor]]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- launchBrowser -->
+        <test-method status="PASS" signature="verifyHeading()[pri:0, instance:test.TestCasesOfBasicTatoc@685cb137]" name="verifyHeading" duration-ms="47" started-at="2019-03-04T13:54:18Z" finished-at="2019-03-04T13:54:18Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLinks -->
-      </class> <!-- automationFramework.SeventhTestCase -->
+        </test-method> <!-- verifyHeading -->
+        <test-method status="PASS" signature="verifyHomepageTitle()[pri:0, instance:test.TestCasesOfBasicTatoc@685cb137]" name="verifyHomepageTitle" duration-ms="32" started-at="2019-03-04T13:54:18Z" finished-at="2019-03-04T13:54:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyHomepageTitle -->
+        <test-method status="PASS" signature="verifyLinkAdvance()[pri:0, instance:test.TestCasesOfBasicTatoc@685cb137]" name="verifyLinkAdvance" duration-ms="134" started-at="2019-03-04T13:54:18Z" finished-at="2019-03-04T13:54:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLinkAdvance -->
+        <test-method status="PASS" signature="verifyLinkBasic()[pri:0, instance:test.TestCasesOfBasicTatoc@685cb137]" name="verifyLinkBasic" duration-ms="130" started-at="2019-03-04T13:54:19Z" finished-at="2019-03-04T13:54:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLinkBasic -->
+        <test-method status="PASS" signature="verifyLinkEmail()[pri:0, instance:test.TestCasesOfBasicTatoc@685cb137]" name="verifyLinkEmail" duration-ms="55" started-at="2019-03-04T13:54:19Z" finished-at="2019-03-04T13:54:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLinkEmail -->
+        <test-method status="PASS" signature="verifyNumberOfLink()[pri:0, instance:test.TestCasesOfBasicTatoc@685cb137]" name="verifyNumberOfLink" duration-ms="17" started-at="2019-03-04T13:54:19Z" finished-at="2019-03-04T13:54:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNumberOfLink -->
+        <test-method status="PASS" signature="verifySubtextOfTitle()[pri:0, instance:test.TestCasesOfBasicTatoc@685cb137]" name="verifySubtextOfTitle" duration-ms="43" started-at="2019-03-04T13:54:19Z" finished-at="2019-03-04T13:54:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySubtextOfTitle -->
+        <test-method status="PASS" signature="verifyWindowTitle()[pri:0, instance:test.TestCasesOfBasicTatoc@685cb137]" name="verifyWindowTitle" duration-ms="9" started-at="2019-03-04T13:54:19Z" finished-at="2019-03-04T13:54:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyWindowTitle -->
+        <test-method status="PASS" signature="terminateBrowser()[pri:0, instance:test.TestCasesOfBasicTatoc@685cb137]" name="terminateBrowser" is-config="true" duration-ms="108" started-at="2019-03-04T13:54:19Z" finished-at="2019-03-04T13:54:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- terminateBrowser -->
+      </class> <!-- test.TestCasesOfBasicTatoc -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

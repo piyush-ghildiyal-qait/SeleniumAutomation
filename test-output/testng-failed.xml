@@ -9,6 +9,24 @@
           <include name="testLinks"/>
         </methods>
       </class> <!-- automationFramework.SeventhTestCase -->
+      <class name="automationFramework.SixthTestCase">
+        <methods>
+          <include name="testSearch"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- automationFramework.SixthTestCase -->
+      <class name="test.TestCasesOfBasicTatoc">
+        <methods>
+          <include name="verifyHomepageTitle"/>
+          <include name="verifySubtextOfTitle"/>
+          <include name="terminateBrowser"/>
+          <include name="verifyNumberOfLink"/>
+          <include name="verifyHeading"/>
+          <include name="verifyWindowTitle"/>
+          <include name="launchBrowser"/>
+          <include name="verifyLinkBasic"/>
+        </methods>
+      </class> <!-- test.TestCasesOfBasicTatoc -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
