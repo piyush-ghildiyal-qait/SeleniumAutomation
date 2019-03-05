@@ -25,8 +25,6 @@ public class FifthTestCase {
 		WebElement password = driver.findElement(By.xpath("//input[@name='txtPassword']"));
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.elementToBeClickable(password));
-				
-		
 		password.sendKeys("Enter your password here");
 		driver.findElement(By.id("txtPassword")).click();
 		password.submit();

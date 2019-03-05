@@ -21,44 +21,14 @@ public class ComposingMail {
 		driver.get(url);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); 
 		WebElement email_phone = driver.findElement(By.xpath("//input[@id='identifierId']"));
-		email_phone.sendKeys("piyushghildiyal074@gmail.com");
+		email_phone.sendKeys("enter your email here");
 		driver.findElement(By.id("identifierNext")).click();
 		WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.elementToBeClickable(password));
-		password.sendKeys("");
+		password.sendKeys("enter your password here");
 		driver.findElement(By.id("passwordNext")).click();
 		driver.findElement(By.xpath("//div[contains(text(),'COMPOSE')]")).click();
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 	}

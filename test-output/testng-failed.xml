@@ -3,28 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="automationFramework.SeventhTestCase">
-        <methods>
-          <include name="setup"/>
-          <include name="testLinks"/>
-        </methods>
-      </class> <!-- automationFramework.SeventhTestCase -->
-      <class name="automationFramework.SixthTestCase">
-        <methods>
-          <include name="testSearch"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- automationFramework.SixthTestCase -->
       <class name="test.TestCasesOfBasicTatoc">
         <methods>
-          <include name="verifyHomepageTitle"/>
-          <include name="verifySubtextOfTitle"/>
           <include name="terminateBrowser"/>
-          <include name="verifyNumberOfLink"/>
-          <include name="verifyHeading"/>
-          <include name="verifyWindowTitle"/>
+          <include name="page4"/>
           <include name="launchBrowser"/>
-          <include name="verifyLinkBasic"/>
         </methods>
       </class> <!-- test.TestCasesOfBasicTatoc -->
     </classes>

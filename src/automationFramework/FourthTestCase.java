@@ -21,7 +21,7 @@ public class FourthTestCase {
 
 	  public static void main(String[] args) throws InterruptedException {
 
-		  System.setProperty("webdriver.chrome.driver","/usr/local/share/chromedriver/chromedriver");
+			System.setProperty("webdriver.chrome.driver","/home/qainfotech/chromedriver");
 			WebDriver driver = new ChromeDriver();  
 		    driver.manage().window().maximize();
 		    String url = "https://gmail.com";
@@ -80,17 +80,73 @@ public class FourthTestCase {
 		    
 		    
 		    
-		    password.sendKeys("enter your password here");      
+		    password.sendKeys("enter your password");      
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
 		   driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS); 
 		    password.sendKeys(Keys.ENTER);
 	
 		    driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		    driver.findElement(By.xpath("//div[@id=':jb']/div[@class='z0']/div")).click(); // Compose
-	//	    selenium.type("//div[@class='wO nr l1']//textarea[@name='to']",       "vikramn@gmail.com"); // For To 
-
-	//	    selenium.type("//div[@class='aoD az6']//input[@name='subjectbox']", "Wanted to SAY HI"); // For Subject
-	//	    selenium.type("//div[@class='Ar Au']/div[@class='Am Al editable LW-avf']", "Hi Vikram");// For Message body
-	//	    selenium.click("//div[@class='J-J5-Ji']/div[@class='T-I J-J5-Ji aoO T-I-atl L3']"); //send
+		    Thread.sleep(5000);
+		    
+		    
+		driver.findElement(By.xpath("//div[@gh='cm']")).click();
+		
+		driver.findElement(By.xpath("//textarea[@id=':q0']")).sendKeys("mohdkamran@qainfotech.com");
+		driver.findElement(By.xpath("//input[@name='subjectbox']")).sendKeys("Auto Generated Mail");
+		
+		
+		Thread.sleep(5000);
+		WebElement message=driver.findElement(By.xpath("//div[@id=':qn']"));
+		message.click();
+		message.sendKeys("Hi Kamran \nThis is an Auto Generated Mail.\n\nThanks and Regards\nPiyush Ghildiyal\nSoftware Engineer Support\nQA Infotech");		
+		
+		
+		driver.findElement(By.xpath("//div[@id=':p8']")).click();
+		
+		//driver.close();
 
 
 }

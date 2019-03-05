@@ -44,7 +44,7 @@ public class BasicsUsingXpathlocator {
 	        
 	        Thread.sleep(1000);
 	        
-// ------------------------------------------  Green Grid ---------------------------------
+// ------------------------------------------  Frame ---------------------------------
 	        
 	        
 	        driver.switchTo().frame("main");	        
@@ -93,7 +93,10 @@ WebElement From=driver.findElement(By.xpath("//div[text()='DRAG ME']"));
 WebElement To=driver.findElement(By.xpath("//div[text()='DROPBOX']"));					
 		
 //Using Action class for drag and drop.		
-Actions act=new Actions(driver);					
+Actions act=new Actions(driver);
+
+
+
 
 //Dragged and dropped.		
 act.dragAndDrop(From, To).build().perform();	
