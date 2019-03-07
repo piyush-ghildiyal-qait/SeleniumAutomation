@@ -5,12 +5,8 @@
     <classes>
       <class name="test.TestCasesOfBasicTatoc">
         <methods>
-          <include name="page4VerifyIfBoxMovable"/>
-          <include name="page4VerifyProceedButtonInTrueCondition"/>
-          <include name="page4VerifyProceedButtonInFalseCondition"/>
           <include name="terminateBrowser"/>
           <include name="page5verifyProceedButton"/>
-          <include name="page5verifyLaunchPopupWindowButton"/>
           <include name="launchBrowser"/>
         </methods>
       </class> <!-- test.TestCasesOfBasicTatoc -->

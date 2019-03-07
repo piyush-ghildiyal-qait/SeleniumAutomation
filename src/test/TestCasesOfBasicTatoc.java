@@ -172,11 +172,11 @@ public class TestCasesOfBasicTatoc {
 		String expectedEmail2 = "<ramandeepsingh@qainfotech.net>";
 		Assert.assertEquals(actualEmail1, expectedEmail1);
 		Assert.assertEquals(actualEmail2, expectedEmail2);
-		
 		System.out.println("run=page2VerifyLinkEmail");
 		System.out.println("p6 "+driver.getTitle());
 	}
 // yha par ruk rha hai. page is not reloading because it is navigating back.
+	
 	@Test(priority = 7)
 	public void page3VerifyProceedLink() {
 		System.out.println("p6 "+driver.getTitle());
@@ -192,13 +192,15 @@ public class TestCasesOfBasicTatoc {
 		driver.switchTo().frame(driver.findElement(By.id("main")));
 
 		if (cl1.equals(cl2)) {
-
+			System.out.println("I m in if ");
 			driver.findElement(By.xpath("//a[@onclick='gonext();']")).click();
 			String expectedTitle = "Drag - Basic Course - T.A.T.O.C";
 			String actualTitle = driver.getTitle();
 			Assert.assertEquals(actualTitle, expectedTitle);
 			driver.navigate().back();
 		} else {
+	
+			System.out.println("I m in else");
 			driver.findElement(By.xpath("//a[@onclick='gonext();']")).click();
 			String expectedTitle = "Error - T.A.T.O.C";
 			String actualTitle = driver.getTitle();
@@ -207,10 +209,11 @@ public class TestCasesOfBasicTatoc {
 			System.out.println("Navigated back");
 		}
 
-		driver.switchTo().defaultContent();
+		
 		System.out.println("run=page3VerifyProceedLink");
 	}
 
+	
 	@Test(priority = 8)
 	public void page3VerifyLinkEmail() {
 
@@ -229,7 +232,8 @@ public class TestCasesOfBasicTatoc {
 public void page4VerifyProceedButtonInFalseCondition() throws InterruptedException {
 
 		/* Now You are on drag drop page */
-driver.switchTo().frame("main");
+//	driver.switchTo().defaultContent();
+	driver.switchTo().frame("main");
 String cl1 = driver.findElement(By.xpath("//div[text()='Box 1']")).getAttribute("class");
 driver.switchTo().frame(driver.findElement(By.id("child")));
 String cl2 = driver.findElement(By.xpath("//div[text()='Box 2']")).getAttribute("class");

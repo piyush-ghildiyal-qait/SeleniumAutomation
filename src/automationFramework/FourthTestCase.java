@@ -130,11 +130,12 @@ public class FourthTestCase {
 	
 		    driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		    Thread.sleep(5000);
-		    
-		    
-		driver.findElement(By.xpath("//div[@gh='cm']")).click();
 		
-		driver.findElement(By.xpath("//textarea[@id=':q0']")).sendKeys("mohdkamran@qainfotech.com");
+		    driver.findElement(By.xpath("//div[@gh='cm']")).click();
+		
+	//	driver.findElement(By.xpath("//textarea[@id=':q0']")).sendKeys("mohdkamran@qainfotech.com");
+		    
+driver.findElement(By.xpath("//textarea[@id=':q0']")).sendKeys("coolpiyushghildiyal@gmail.com");
 		driver.findElement(By.xpath("//input[@name='subjectbox']")).sendKeys("Auto Generated Mail");
 		
 		
