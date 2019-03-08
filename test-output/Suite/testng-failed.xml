@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]">
+  <test thread-count="5" name="ToolsQA(failed)">
+    <parameter name="sUsername" value="piyushghildiyal@gmail.com"/>
+    <parameter name="sPassword" value="gmail@1998"/>
+    <classes>
+      <class name="testngparametersanddataprovider.TestngParameters">
+        <methods>
+          <include name="Test"/>
+        </methods>
+      </class> <!-- testngparametersanddataprovider.TestngParameters -->
+    </classes>
+  </test> <!-- ToolsQA(failed) -->
+</suite> <!-- Failed suite [Suite] -->

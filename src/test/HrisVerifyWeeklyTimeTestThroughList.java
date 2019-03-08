@@ -33,7 +33,7 @@ public class HrisVerifyWeeklyTimeTestThroughList {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.elementToBeClickable(password));
 
-	    password.sendKeys(" Enter Your password here");
+	    password.sendKeys("Piyushghildiyal@123");
 		
 		driver.findElement(By.id("txtPassword")).click();
 		password.submit();
@@ -85,9 +85,7 @@ public class HrisVerifyWeeklyTimeTestThroughList {
 		int actualTime = totalHours * 60 + totalMinutes;
 		int expectedTime = totalTimeHH * 60 + totalTimeMM;
 		Assert.assertEquals(actualTime, expectedTime);
-
-		driver.close();
-
+        driver.close();
 	}
 
 }

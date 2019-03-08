@@ -1,9 +1,8 @@
-package automationFramework;
+package testngparametersanddataprovider;
 
+import org.testng.annotations.DataProvider;
 
-
-
-
+import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
@@ -15,16 +14,28 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class FourthTestCase {
+public class DataProviderEg {
+
+	private static WebDriver driver;
 	
 	
-
-	  public static void main(String[] args) throws InterruptedException {
-
-			System.setProperty("webdriver.chrome.driver","/home/qainfotech/chromedriver");
-			WebDriver driver = new ChromeDriver();  
-		    driver.manage().window().maximize();
-		    String url = "https://gmail.com";
+	 @DataProvider(name = "Authentication")
+	 public static Object[][] credentials() {
+	 
+	    
+		 return new Object[][] { { "piyushghildiyal074@gmail.com","piyush" },{ "piyushghildiyal074@gmail.com","piyush" },{ "coolpiyushghildiyal@gmail.com","kamran" }};
+	  }
+	 
+	  // Here we are calling the Data Provider object with its Name
+	 
+	  @Test(dataProvider = "Authentication")
+	 public void Test(String Email,String nameInEmail) throws InterruptedException {
+		
+		
+		System.setProperty("webdriver.chrome.driver", "/home/qainfotech/chromedriver");
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		 String url = "https://gmail.com";
 		    driver.get(url);
 		    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); 
 		    WebElement email_phone = driver.findElement(By.xpath("//input[@id='identifierId']"));
@@ -33,7 +44,7 @@ public class FourthTestCase {
 		    WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
 		    WebDriverWait wait = new WebDriverWait(driver, 20);
 		    wait.until(ExpectedConditions.elementToBeClickable(password));
-		    System.out.println("\ntest  password");
+		    System.out.println("\n plz enter your password");
 		    
 		    
 		    
@@ -57,7 +68,6 @@ public class FourthTestCase {
 		    
 		    
 		    
-		   
 		    
 		    
 		    
@@ -70,6 +80,7 @@ public class FourthTestCase {
 		    
 		    
 		    
+		    password.sendKeys("enter your password here");      
 		    
 		    
 		    
@@ -80,7 +91,6 @@ public class FourthTestCase {
 		    
 		    
 		    
-		    password.sendKeys("Gmail@1998");      
 		    
 		    
 		    
@@ -125,27 +135,26 @@ public class FourthTestCase {
 		    
 		    
 		    
-		   driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS); 
+		    driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS); 
 		    password.sendKeys(Keys.ENTER);
 	
 		    driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		    Thread.sleep(5000);
-		
+		    
+
 		    driver.findElement(By.xpath("//div[@gh='cm']")).click();
 		
 	//	driver.findElement(By.xpath("//textarea[@id=':q0']")).sendKeys("mohdkamran@qainfotech.com");
-		    
-        driver.findElement(By.xpath("//textarea[@id=':q0']")).sendKeys("coolpiyushghildiyal@gmail.com");
+        driver.findElement(By.xpath("//textarea[@aria-label='To']")).sendKeys(Email);
 		driver.findElement(By.xpath("//input[@name='subjectbox']")).sendKeys("Auto Generated Mail");
 		
 		
-		Thread.sleep(5000);
-		WebElement message=driver.findElement(By.xpath("//div[@id=':qn']"));
+		
+		WebElement message=driver.findElement(By.xpath("//div[@aria-label='Message Body']"));
 		message.click();
-		message.sendKeys("Hi Kamran \nThis is an Auto Generated Mail.\n\nThanks and Regards\nPiyush Ghildiyal\nSoftware Engineer Support\nQA Infotech");		
+		message.sendKeys("Hi "+nameInEmail+" \nThis is an Auto Generated Mail.\n\nThanks and Regards\nPiyush Ghildiyal\nSoftware Engineer Support\nQA Infotech");		
 		
 		
-		driver.findElement(By.xpath("//div[@id=':p8']")).click();
+		driver.findElement(By.xpath("//div[@aria-label='Send ‪(Ctrl-Enter)‬']")).click();
 		
 		driver.findElement(By.xpath("//span[@class='gb_ya gbii']")).click();
 		driver.findElement(By.xpath("//a[text()='Sign out']")).click();
@@ -154,7 +163,8 @@ public class FourthTestCase {
 		
 		driver.close();
 
-
+		    
+		  
+	}
+	
 }
-}
-

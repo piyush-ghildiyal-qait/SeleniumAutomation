@@ -1,17 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6452" started-at="2019-03-07T13:34:36Z" finished-at="2019-03-07T13:34:43Z">
+  <suite name="Default suite" duration-ms="54601" started-at="2019-03-08T07:22:51Z" finished-at="2019-03-08T07:23:45Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6452" started-at="2019-03-07T13:34:36Z" finished-at="2019-03-07T13:34:43Z">
-      <class name="test.HrisVerifyWeeklyTimeTestThroughList">
-        <test-method status="PASS" signature="TestList()[pri:0, instance:test.HrisVerifyWeeklyTimeTestThroughList@27efef64]" name="TestList" duration-ms="6433" started-at="2019-03-07T13:34:36Z" finished-at="2019-03-07T13:34:43Z">
+    <test name="Default test" duration-ms="54601" started-at="2019-03-08T07:22:51Z" finished-at="2019-03-08T07:23:45Z">
+      <class name="testngparametersanddataprovider.DataProviderEg">
+        <test-method status="PASS" signature="Test(java.lang.String, java.lang.String)[pri:0, instance:testngparametersanddataprovider.DataProviderEg@47c62251]" name="Test" duration-ms="19056" started-at="2019-03-08T07:22:51Z" data-provider="Authentication" finished-at="2019-03-08T07:23:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[piyushghildiyal074@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[piyush]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TestList -->
-      </class> <!-- test.HrisVerifyWeeklyTimeTestThroughList -->
+        </test-method> <!-- Test -->
+        <test-method status="PASS" signature="Test(java.lang.String, java.lang.String)[pri:0, instance:testngparametersanddataprovider.DataProviderEg@47c62251]" name="Test" duration-ms="17462" started-at="2019-03-08T07:23:10Z" data-provider="Authentication" finished-at="2019-03-08T07:23:27Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[piyushghildiyal074@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[piyush]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test -->
+        <test-method status="PASS" signature="Test(java.lang.String, java.lang.String)[pri:0, instance:testngparametersanddataprovider.DataProviderEg@47c62251]" name="Test" duration-ms="18057" started-at="2019-03-08T07:23:27Z" data-provider="Authentication" finished-at="2019-03-08T07:23:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[coolpiyushghildiyal@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[kamran]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test -->
+      </class> <!-- testngparametersanddataprovider.DataProviderEg -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
