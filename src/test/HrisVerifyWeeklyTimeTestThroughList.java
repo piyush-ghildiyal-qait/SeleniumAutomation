@@ -33,7 +33,7 @@ public class HrisVerifyWeeklyTimeTestThroughList {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.elementToBeClickable(password));
 
-	    password.sendKeys("Piyushghildiyal@123");
+	    password.sendKeys("enter your password");
 		
 		driver.findElement(By.id("txtPassword")).click();
 		password.submit();
