@@ -13,29 +13,6 @@ public class TicTacToe2 {
 	
 	public boolean isEmpty = false;
 	
-/*	
-	void increment() {
-
-		for(int i=1;i<=3;i++)
-		{
-		for(int j=1;j<=3;j++)
-		{
-			if(driver.findElement(By.xpath("//td[@id='"+Integer.toString(i)+Integer.toString(j)+"']/img")).getAttribute("src")=="x.png")
-			{
-			  a[i-1][j-1]=1;
-			}
-			if(driver.findElement(By.xpath("//td[@id='"+Integer.toString(i)+Integer.toString(j)+"']/img")).getAttribute("src")=="o.png")
-			{
-			  a[i-1][j-1]=-1;
-			}
-		}
-		}
-		
-		
-	}
-	
-	
-*/	
 
 	
 	
@@ -98,6 +75,7 @@ System.out.println("a["+i+"]["+j+"]="+a[i-1][j-1]);
 		String human="Human (Player 1)";
 		String tap="TAP (Player 2)";
 		
+		WebDriverWait wait = new WebDriverWait(driver, 10);
 		
 		while(true)
 		{
@@ -105,37 +83,43 @@ System.out.println("a["+i+"]["+j+"]="+a[i-1][j-1]);
 			
 			driver.findElement(By.xpath("//td[@id='11']")).click();
 			a[0][0]=1;
-			WebDriverWait wait = new WebDriverWait(driver, 10);
 			 
-		//	WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("someid")));
+	
+				
+		
+		}
+		else {
+			wait.until(ExpectedConditions.textToBe(By.xpath("//span[@id='turn']"),"TAP (Player 2)"));		
+
+			driver.findElement(By.xpath("//td[@id='12']")).click();
+	a[0][1]=1;
+
+	         wait.until(ExpectedConditions.textToBe(By.xpath("//span[@id='turn']"),"TAP (Player 2)"));		
+			driver.findElement(By.xpath("//td[@id='21']")).click();
+				a[1][0]=1;
 			
-		//	WebElement element = wait.until(ExpectedConditions.textToBe(By.xpath("//span[@id='turn']"),"TAP (Player 2)")));
-		
-		wait.until(ExpectedConditions.textToBe(By.xpath("//span[@id='turn']"),"TAP (Player 2)"));		
+			
+				 wait.until(ExpectedConditions.textToBe(By.xpath("//span[@id='turn']"),"TAP (Player 2)"));		
+					driver.findElement(By.xpath("//td[@id='22']")).click();
+						a[1][1]=1;
+					
+				
+			if(driver.findElement(By.xpath("//span[@id='turn']")).getText().equals("TAP Won!!"))
+			{
+				break;
+			}
 
-		driver.findElement(By.xpath("//td[@id='12']")).click();
-a[0][1]=1;
-	//	wait.until(ExpectedConditions.textToBe(By.xpath("//span[@id='turn']"),"TAP (Player 2)"));		
-	//	driver.findElement(By.xpath("//td[@id='13']")).click();
-		
-		if(driver.findElement(By.xpath("//span[@id='turn']")).getText().equals("TAP (Player 2)"))
-		{
-			driver.findElement(By.xpath("//td[@id='13']")).click();
-			a[0][2]=1;
-		}
-		
-		if(driver.findElement(By.xpath("//span[@id='turn']")).getText().equals("TAP Won!!"))
-		{
-			break;
-		}
-
-		if(driver.findElement(By.xpath("//span[@id='turn']")).getText().equals("Human Won!!"))
-		{
-			break;
+			if(driver.findElement(By.xpath("//span[@id='turn']")).getText().equals("Human Won!!"))
+			{
+				break;
+			}
+	
+			
 		}
 		
 		
-		}
+		
+		
 		}
 		
 		driver.close();

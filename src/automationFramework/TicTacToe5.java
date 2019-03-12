@@ -74,23 +74,23 @@ for(int i=1;i<=3;i++)
 		{
 			if(IsTestElementPresent(driver, i, j))
 			{
-	           System.out.println("image is loaded");
+	        //   System.out.println("image is loaded");
 	       	
             if(driver.findElement(By.xpath("//td[@id='"+Integer.toString(i)+Integer.toString(j)+"']/img")).getAttribute("src").equals("http://10.0.1.86/tap_classroom/TicTacToe/x.png"))
 			{
 			
-				System.out.println("x image");
+			//	System.out.println("x image");
 			  b[i-1][j-1]=b[i-1][j-1]+1;
 			}
             if(driver.findElement(By.xpath("//td[@id='"+Integer.toString(i)+Integer.toString(j)+"']/img")).getAttribute("src").equals("http://10.0.1.86/tap_classroom/TicTacToe/o.png"))
 			{
-				System.out.println("o image");
+            //	System.out.println("o image");
 			  b[i-1][j-1]=b[i-1][j-1]-1;
 			}
 			}
 			else
 			{
-				System.out.println("image is not loaded");
+			//	System.out.println("image is not loaded");
 			}
 		}
 		}
@@ -121,80 +121,82 @@ for(int j=1;j<=3;j++)
 	
 	public void logic(WebDriver driver,int[][] a)
 	{
+		System.out.println("in logic");
+	/*	
           if(a[0][0]!=0 && a[0][1]==0 && a[0][2]==0)
           {
         	  driver.findElement(By.xpath("//td[@id='22']")).click();
           }
-          if(a[0][0]==0 && a[0][1]==0 && a[0][2]!=0)
+          else if(a[0][0]==0 && a[0][1]==0 && a[0][2]!=0)
           {
         	  driver.findElement(By.xpath("//td[@id='22']")).click();
           }
-          if(a[0][0]==0 && a[0][1]!=0 && a[0][2]==0)
+          else if(a[0][0]==0 && a[0][1]!=0 && a[0][2]==0)
           {
         	  driver.findElement(By.xpath("//td[@id='22']")).click();
           }
-          if(a[0][0]!=0 && a[1][0]==0 && a[2][0]==0)
+          else if(a[0][0]!=0 && a[1][0]==0 && a[2][0]==0)
           {
         	  driver.findElement(By.xpath("//td[@id='22']")).click();
           }
-          if(a[0][0]==0 && a[1][0]!=0 && a[2][0]==0)
+          else if(a[0][0]==0 && a[1][0]!=0 && a[2][0]==0)
           {
         	  driver.findElement(By.xpath("//td[@id='22']")).click();
           }
-          if(a[0][0]==0 && a[1][0]==0 && a[2][0]!=0)
+          else if(a[0][0]==0 && a[1][0]==0 && a[2][0]!=0)
           {
         	  driver.findElement(By.xpath("//td[@id='22']")).click();
           }
-          if(a[0][2]!=0 && a[1][2]==0 && a[2][2]==0)
+          else if(a[0][2]!=0 && a[1][2]==0 && a[2][2]==0)
           {
         	  driver.findElement(By.xpath("//td[@id='22']")).click();
           }
-          if(a[0][2]==0 && a[1][2]!=0 && a[2][2]==0)
+          else if(a[0][2]==0 && a[1][2]!=0 && a[2][2]==0)
           {
         	  driver.findElement(By.xpath("//td[@id='22']")).click();
           }
-          if(a[0][2]==0 && a[1][2]==0 && a[2][2]!=0)
+          else if(a[0][2]==0 && a[1][2]==0 && a[2][2]!=0)
           {
         	  driver.findElement(By.xpath("//td[@id='22']")).click();
           }
-          if(a[2][0]!=0 && a[2][1]==0 && a[2][2]==0)
+          else if(a[2][0]!=0 && a[2][1]==0 && a[2][2]==0)
           {
         	  driver.findElement(By.xpath("//td[@id='22']")).click();
           }
-          if(a[2][0]==0 && a[2][1]!=0 && a[2][2]==0)
+          else if(a[2][0]==0 && a[2][1]!=0 && a[2][2]==0)
           {
         	  driver.findElement(By.xpath("//td[@id='22']")).click();
           }
-          if(a[2][0]==0 && a[2][1]==0 && a[2][2]!=0)
+          else if(a[2][0]==0 && a[2][1]==0 && a[2][2]!=0)
           {
         	  driver.findElement(By.xpath("//td[@id='22']")).click();
           }
           
           // first row
-          if(a[0][0]==1 && a[0][1]==1 && a[0][2]==0 || a[0][0]==-1 && a[0][1]==-1 && a[0][2]==0)
+          else if((a[0][0]==1 && a[0][1]==1 && a[0][2]==0) || (a[0][0]==-1 && a[0][1]==-1 && a[0][2]==0))
           {
         	  driver.findElement(By.xpath("//td[@id='13']")).click();
           }
-          if(a[0][0]==1 && a[0][1]==0 && a[0][2]==1 || a[0][0]==-1 && a[0][1]==0 && a[0][2]==-1)
+          else if((a[0][0]==1 && a[0][1]==0 && a[0][2]==1) || (a[0][0]==-1 && a[0][1]==0 && a[0][2]==-1))
           {
         	  driver.findElement(By.xpath("//td[@id='12']")).click();
           }
-          if(a[0][0]==0 && a[0][1]==1 && a[0][2]==1 || a[0][0]==0 && a[0][1]==-1 && a[0][2]==-1)
+          else if((a[0][0]==0 && a[0][1]==1 && a[0][2]==1) || (a[0][0]==0 && a[0][1]==-1 && a[0][2]==-1))
           {
         	  driver.findElement(By.xpath("//td[@id='11']")).click();
           }
         
         
           // second row
-          if(a[1][0]!=0 && a[1][1]!=0 && a[1][2]==0)
+          else if((a[1][0]==1 && a[1][1]==1 && a[1][2]==0 ) || (a[1][0]==-1 && a[1][1]==-1 && a[1][2]==0))
           {
         	  driver.findElement(By.xpath("//td[@id='23']")).click();
           }
-          if(a[1][0]!=0 && a[1][1]==0 && a[1][2]!=0)
+          else if((a[1][0]==1 && a[1][1]==0 && a[1][2]==1 ) || (a[1][0]==-1 && a[1][1]==0 && a[1][2]==-1))
           {
         	  driver.findElement(By.xpath("//td[@id='22']")).click();
           }
-          if(a[1][0]==0 && a[1][1]!=0 && a[1][2]!=0)
+          else if((a[1][0]==0 && a[1][1]==1 && a[1][2]==1) || ( a[1][0]==0 && a[1][1]==-1 && a[1][2]==-1) )
           {
         	  driver.findElement(By.xpath("//td[@id='21']")).click();
           }
@@ -202,15 +204,15 @@ for(int j=1;j<=3;j++)
         
          
        // third row
-          if(a[2][0]!=0 && a[2][1]!=0 && a[2][2]==0)
+          else if( (a[2][0]==1 && a[2][1]==1 && a[2][2]==0) || (a[2][0]==-1 && a[2][1]==-1 && a[2][2]==0))
           {
         	  driver.findElement(By.xpath("//td[@id='33']")).click();
           }
-          if(a[2][0]!=0 && a[2][1]==0 && a[2][2]!=0)
+          else if((a[2][0]==1 && a[2][1]==0 && a[2][2]==1) || (a[2][0]==-1 && a[2][1]==0 && a[2][2]==-1))
           {
         	  driver.findElement(By.xpath("//td[@id='32']")).click();
           }
-          if(a[2][0]==0 && a[2][1]!=0 && a[2][2]!=0)
+          else if((a[2][0]==0 && a[2][1]==1 && a[2][2]==1)  ||  (a[2][0]==0 && a[2][1]==1 && a[2][2]==1))
           {
         	  driver.findElement(By.xpath("//td[@id='31']")).click();
           }
@@ -219,15 +221,15 @@ for(int j=1;j<=3;j++)
           
           // first column
           
-          if(a[0][0]!=0 && a[1][0]!=0 && a[2][0]==0)
+          else if((a[0][0]==1 && a[1][0]==1 && a[2][0]==0) || (a[0][0]==-1 && a[1][0]==-1 && a[2][0]==0))
           {
         	  driver.findElement(By.xpath("//td[@id='31']")).click();
           }
-          if(a[0][0]==0 && a[1][0]!=0 && a[2][0]!=0)
+          else if((a[0][0]==0 && a[1][0]==1 && a[2][0]==1) || (a[0][0]==0 && a[1][0]==-1 && a[2][0]==-1))
           {
         	  driver.findElement(By.xpath("//td[@id='11']")).click();
           }
-          if(a[0][0]!=0 && a[1][0]==0 && a[2][0]!=0)
+          else if((a[0][0]==1 && a[1][0]==0 && a[2][0]==1) || (a[0][0]==-1 && a[1][0]==0 && a[2][0]==-1))
           {
         	  driver.findElement(By.xpath("//td[@id='21']")).click();
           }
@@ -235,15 +237,15 @@ for(int j=1;j<=3;j++)
          
  // second column
           
-          if(a[0][1]!=0 && a[1][1]!=0 && a[2][1]==0)
+          else if(a[0][1]!=0 && a[1][1]!=0 && a[2][1]==0)
           {
         	  driver.findElement(By.xpath("//td[@id='32']")).click();
           }
-          if(a[0][1]==0 && a[1][1]!=0 && a[2][1]!=0)
+          else if(a[0][1]==0 && a[1][1]!=0 && a[2][1]!=0)
           {
         	  driver.findElement(By.xpath("//td[@id='12']")).click();
           }
-          if(a[0][1]!=0 && a[1][1]==0 && a[2][1]!=0)
+          else if(a[0][1]!=0 && a[1][1]==0 && a[2][1]!=0)
           {
         	  driver.findElement(By.xpath("//td[@id='22']")).click();
           }
@@ -251,30 +253,30 @@ for(int j=1;j<=3;j++)
  
 // third column
           
-          if(a[0][2]!=0 && a[1][2]!=0 && a[2][2]==0)
+          else if((a[0][2]==1 && a[1][2]==1 && a[2][2]==0) || (a[0][2]==-1 && a[1][2]==-1 && a[2][2]==0))
           {
         	  driver.findElement(By.xpath("//td[@id='33']")).click();
           }
-          if(a[0][2]==0 && a[1][2]!=0 && a[2][2]!=0)
+          else if((a[0][2]==0 && a[1][2]==1 && a[2][2]==1) || (a[0][2]==0 && a[1][2]==-1 && a[2][2]==-1))
           {
         	  driver.findElement(By.xpath("//td[@id='13']")).click();
           }
-          if(a[0][2]!=0 && a[1][2]==0 && a[2][2]!=0)
+          else if((a[0][2]==1 && a[1][2]==0 && a[2][2]==1) || (a[0][2]==-1 && a[1][2]==0 && a[2][2]==-1))
           {
         	  driver.findElement(By.xpath("//td[@id='23']")).click();
           }
      
 //  first diagonal  \
           
-          if(a[0][0]!=0 && a[1][1]!=0 && a[2][2]==0)
+          else if((a[0][0]==1 && a[1][1]==1 && a[2][2]==0) || (a[0][0]==-1 && a[1][1]==-1 && a[2][2]==0))
           {
         	  driver.findElement(By.xpath("//td[@id='33']")).click();
           }
-          if(a[0][0]==0 && a[1][1]!=0 && a[2][2]!=0)
+          else if((a[0][0]==0 && a[1][1]==1 && a[2][2]==1) || (a[0][0]==0 && a[1][1]==-1 && a[2][2]==-1))
           {
         	  driver.findElement(By.xpath("//td[@id='11']")).click();
           }
-          if(a[0][0]!=0 && a[1][1]==0 && a[2][2]!=0)
+          else if((a[0][0]==1 && a[1][1]==0 && a[2][2]==1) || (a[0][0]==-1 && a[1][1]==0 && a[2][2]==-1))
           {
         	  driver.findElement(By.xpath("//td[@id='22']")).click();
           }
@@ -282,22 +284,463 @@ for(int j=1;j<=3;j++)
           
 //  second diagonal  /
           
-          if(a[0][2]!=0 && a[1][1]!=0 && a[2][0]==0)
+          else if((a[0][2]==1 && a[1][1]==1 && a[2][0]==0) || (a[0][2]==-1 && a[1][1]==-1 && a[2][0]==0))
           {
         	  driver.findElement(By.xpath("//td[@id='31']")).click();
           }
-          if(a[0][2]==0 && a[1][1]!=0 && a[2][0]!=0)
+          else if((a[0][2]==0 && a[1][1]==1 && a[2][0]==1) || (a[0][2]==0 && a[1][1]==1 && a[2][0]==-1))
           {
         	  driver.findElement(By.xpath("//td[@id='13']")).click();
           }
-          if(a[0][2]!=0 && a[1][1]==0 && a[2][0]!=0)
+          else if((a[0][2]==1 && a[1][1]==0 && a[2][0]==1)|| (a[0][2]==-1 && a[1][1]==0 && a[2][0]==-1))
           {
         	  driver.findElement(By.xpath("//td[@id='22']")).click();
           }
+ 
+ */              
           
-                    
-          
-          
+	
+        if(a[0][0]!=0 && a[0][1]==0 && a[0][2]==0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='22']")).click();
+        }
+        if(a[0][0]==0 && a[0][1]==0 && a[0][2]!=0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='22']")).click();
+        }
+        if(a[0][0]==0 && a[0][1]!=0 && a[0][2]==0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='22']")).click();
+        }
+        if(a[0][0]!=0 && a[1][0]==0 && a[2][0]==0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='22']")).click();
+        }
+        if(a[0][0]==0 && a[1][0]!=0 && a[2][0]==0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='22']")).click();
+        }
+        if(a[0][0]==0 && a[1][0]==0 && a[2][0]!=0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='22']")).click();
+        }
+        if(a[0][2]!=0 && a[1][2]==0 && a[2][2]==0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='22']")).click();
+        }
+        if(a[0][2]==0 && a[1][2]!=0 && a[2][2]==0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='22']")).click();
+        }
+        if(a[0][2]==0 && a[1][2]==0 && a[2][2]!=0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='22']")).click();
+        }
+        if(a[2][0]!=0 && a[2][1]==0 && a[2][2]==0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='22']")).click();
+        }
+        if(a[2][0]==0 && a[2][1]!=0 && a[2][2]==0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='22']")).click();
+        }
+        if(a[2][0]==0 && a[2][1]==0 && a[2][2]!=0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='22']")).click();
+        }
+        
+        // first row
+        if((a[0][0]==1 && a[0][1]==1 && a[0][2]==0) || (a[0][0]==-1 && a[0][1]==-1 && a[0][2]==0))
+        {
+      	  driver.findElement(By.xpath("//td[@id='13']")).click();
+        }
+        if((a[0][0]==1 && a[0][1]==0 && a[0][2]==1) || (a[0][0]==-1 && a[0][1]==0 && a[0][2]==-1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='12']")).click();
+        }
+        if((a[0][0]==0 && a[0][1]==1 && a[0][2]==1) || (a[0][0]==0 && a[0][1]==-1 && a[0][2]==-1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='11']")).click();
+        }
+      
+      
+   // second row
+        if((a[1][0]==1 && a[1][1]==1 && a[1][2]==0 ) || (a[1][0]==-1 && a[1][1]==-1 && a[1][2]==0))
+        {
+      	  driver.findElement(By.xpath("//td[@id='23']")).click();
+        }
+        if((a[1][0]==1 && a[1][1]==0 && a[1][2]==1 ) || (a[1][0]==-1 && a[1][1]==0 && a[1][2]==-1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='22']")).click();
+        }
+        if((a[1][0]==0 && a[1][1]==1 && a[1][2]==1) || ( a[1][0]==0 && a[1][1]==-1 && a[1][2]==-1) )
+        {
+      	  driver.findElement(By.xpath("//td[@id='21']")).click();
+        }
+       
+      
+       
+     // third row
+        if( (a[2][0]==1 && a[2][1]==1 && a[2][2]==0) || (a[2][0]==-1 && a[2][1]==-1 && a[2][2]==0))
+        {
+      	  driver.findElement(By.xpath("//td[@id='33']")).click();
+        }
+        if((a[2][0]==1 && a[2][1]==0 && a[2][2]==1) || (a[2][0]==-1 && a[2][1]==0 && a[2][2]==-1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='32']")).click();
+        }
+        if((a[2][0]==0 && a[2][1]==1 && a[2][2]==1)  ||  (a[2][0]==0 && a[2][1]==1 && a[2][2]==1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='31']")).click();
+        }
+        
+        
+        
+        // first column
+        
+        if((a[0][0]==1 && a[1][0]==1 && a[2][0]==0) || (a[0][0]==-1 && a[1][0]==-1 && a[2][0]==0))
+        {
+      	  driver.findElement(By.xpath("//td[@id='31']")).click();
+        }
+        if((a[0][0]==0 && a[1][0]==1 && a[2][0]==1) || (a[0][0]==0 && a[1][0]==-1 && a[2][0]==-1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='11']")).click();
+        }
+        if((a[0][0]==1 && a[1][0]==0 && a[2][0]==1) || (a[0][0]==-1 && a[1][0]==0 && a[2][0]==-1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='21']")).click();
+        }
+        
+       
+// second column
+        
+        if((a[0][1]==1 && a[1][1]==1 && a[2][1]==0) || (a[0][1]==-1 && a[1][1]==-1 && a[2][1]==0))
+        {
+      	  driver.findElement(By.xpath("//td[@id='32']")).click();
+        }
+        if((a[0][1]==0 && a[1][1]==1 && a[2][1]==1) || (a[0][1]==0 && a[1][1]==-1 && a[2][1]==-1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='12']")).click();
+        }
+        if((a[0][1]==1 && a[1][1]==0 && a[2][1]==1) || (a[0][1]==-1 && a[1][1]==0 && a[2][1]==-1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='22']")).click();
+        }
+        
+
+//third column
+        
+        if((a[0][2]==1 && a[1][2]==1 && a[2][2]==0) || (a[0][2]==-1 && a[1][2]==-1 && a[2][2]==0))
+        {
+      	  driver.findElement(By.xpath("//td[@id='33']")).click();
+        }
+        if((a[0][2]==0 && a[1][2]==1 && a[2][2]==1) || (a[0][2]==0 && a[1][2]==-1 && a[2][2]==-1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='13']")).click();
+        }
+        if((a[0][2]==1 && a[1][2]==0 && a[2][2]==1) || (a[0][2]==-1 && a[1][2]==0 && a[2][2]==-1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='23']")).click();
+        }
+   
+//first diagonal  \
+        
+        if((a[0][0]==1 && a[1][1]==1 && a[2][2]==0) || (a[0][0]==-1 && a[1][1]==-1 && a[2][2]==0))
+        {
+      	  driver.findElement(By.xpath("//td[@id='33']")).click();
+        }
+        if((a[0][0]==0 && a[1][1]==1 && a[2][2]==1) || (a[0][0]==0 && a[1][1]==-1 && a[2][2]==-1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='11']")).click();
+        }
+        if((a[0][0]==1 && a[1][1]==0 && a[2][2]==1) || (a[0][0]==-1 && a[1][1]==0 && a[2][2]==-1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='22']")).click();
+        }
+        
+        
+//second diagonal  /
+        
+        if((a[0][2]==1 && a[1][1]==1 && a[2][0]==0) || (a[0][2]==-1 && a[1][1]==-1 && a[2][0]==0))
+        {
+      	  driver.findElement(By.xpath("//td[@id='31']")).click();
+        }
+        if((a[0][2]==0 && a[1][1]==1 && a[2][0]==1) || (a[0][2]==0 && a[1][1]==1 && a[2][0]==-1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='13']")).click();
+        }
+        if((a[0][2]==1 && a[1][1]==0 && a[2][0]==1)|| (a[0][2]==-1 && a[1][1]==0 && a[2][0]==-1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='22']")).click();
+        }
+        
+        
+        
+        
+        
+      
+ /*    
+        // first row
+        if((a[0][0]==1 && a[0][1]==-1 && a[0][2]==0) || (a[0][0]==-1 && a[0][1]==1 && a[0][2]==0))
+        {
+      	  driver.findElement(By.xpath("//td[@id='13']")).click();
+        }
+        if((a[0][0]==1 && a[0][1]==0 && a[0][2]==-1) || (a[0][0]==-1 && a[0][1]==0 && a[0][2]==1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='12']")).click();
+        }
+        if((a[0][0]==0 && a[0][1]==1 && a[0][2]==-1) || (a[0][0]==0 && a[0][1]==-1 && a[0][2]==1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='11']")).click();
+        }
+      
+      
+        // second row
+        if((a[1][0]==1 && a[1][1]==-1 && a[1][2]==0 ) || (a[1][0]==-1 && a[1][1]==1 && a[1][2]==0))
+        {
+      	  driver.findElement(By.xpath("//td[@id='23']")).click();
+        }
+        if((a[1][0]==1 && a[1][1]==0 && a[1][2]==-1 ) || (a[1][0]==-1 && a[1][1]==0 && a[1][2]==1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='22']")).click();
+        }
+        if((a[1][0]==0 && a[1][1]==1 && a[1][2]==-1) || ( a[1][0]==0 && a[1][1]==-1 && a[1][2]==1) )
+        {
+      	  driver.findElement(By.xpath("//td[@id='21']")).click();
+        }
+       
+      
+       
+     // third row
+        if( (a[2][0]==1 && a[2][1]==-1 && a[2][2]==0) || (a[2][0]==-1 && a[2][1]==1 && a[2][2]==0))
+        {
+      	  driver.findElement(By.xpath("//td[@id='33']")).click();
+        }
+        if((a[2][0]==1 && a[2][1]==0 && a[2][2]==-1) || (a[2][0]==-1 && a[2][1]==0 && a[2][2]==1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='32']")).click();
+        }
+        if((a[2][0]==0 && a[2][1]==1 && a[2][2]==-1)  ||  (a[2][0]==0 && a[2][1]==-1 && a[2][2]==1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='31']")).click();
+        }
+        
+        
+        
+        // first column
+        
+        if((a[0][0]==1 && a[1][0]==-1 && a[2][0]==0) || (a[0][0]==-1 && a[1][0]==1 && a[2][0]==0))
+        {
+      	  driver.findElement(By.xpath("//td[@id='31']")).click();
+        }
+        if((a[0][0]==0 && a[1][0]==1 && a[2][0]==-1) || (a[0][0]==0 && a[1][0]==-1 && a[2][0]==1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='11']")).click();
+        }
+        if((a[0][0]==1 && a[1][0]==0 && a[2][0]==-1) || (a[0][0]==-1 && a[1][0]==0 && a[2][0]==1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='21']")).click();
+        }
+        
+       
+// second column
+        
+        if((a[0][1]==1 && a[1][1]==-1 && a[2][1]==0) || (a[0][1]==-1 && a[1][1]==1 && a[2][1]==0))
+        {
+      	  driver.findElement(By.xpath("//td[@id='32']")).click();
+        }
+        if((a[0][1]==0 && a[1][1]==1 && a[2][1]==-1) || (a[0][1]==0 && a[1][1]==-1 && a[2][1]==1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='12']")).click();
+        }
+        if((a[0][1]==1 && a[1][1]==0 && a[2][1]==-1) || (a[0][1]==-1 && a[1][1]==0 && a[2][1]==1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='22']")).click();
+        }
+        
+
+//third column
+        
+        if((a[0][2]==1 && a[1][2]==-1 && a[2][2]==0) || (a[0][2]==-1 && a[1][2]==1 && a[2][2]==0))
+        {
+      	  driver.findElement(By.xpath("//td[@id='33']")).click();
+        }
+        if((a[0][2]==0 && a[1][2]==1 && a[2][2]==-1) || (a[0][2]==0 && a[1][2]==-1 && a[2][2]==1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='13']")).click();
+        }
+        if((a[0][2]==1 && a[1][2]==0 && a[2][2]==-1) || (a[0][2]==-1 && a[1][2]==0 && a[2][2]==1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='23']")).click();
+        }
+   
+//first diagonal  \
+        
+        if((a[0][0]==1 && a[1][1]==-1 && a[2][2]==0) || (a[0][0]==-1 && a[1][1]==1 && a[2][2]==0))
+        {
+      	  driver.findElement(By.xpath("//td[@id='33']")).click();
+        }
+        if((a[0][0]==0 && a[1][1]==1 && a[2][2]==-1) || (a[0][0]==0 && a[1][1]==-1 && a[2][2]==1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='11']")).click();
+        }
+        if((a[0][0]==1 && a[1][1]==0 && a[2][2]==-1) || (a[0][0]==-1 && a[1][1]==0 && a[2][2]==1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='22']")).click();
+        }
+        
+        
+//second diagonal  /
+        
+        if((a[0][2]==1 && a[1][1]==-1 && a[2][0]==0) || (a[0][2]==-1 && a[1][1]==1 && a[2][0]==0))
+        {
+      	  driver.findElement(By.xpath("//td[@id='31']")).click();
+        }
+        if((a[0][2]==0 && a[1][1]==1 && a[2][0]==-1) || (a[0][2]==0 && a[1][1]==-1 && a[2][0]==1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='13']")).click();
+        }
+        if((a[0][2]==1 && a[1][1]==0 && a[2][0]==-1)|| (a[0][2]==-1 && a[1][1]==0 && a[2][0]==1))
+        {
+      	  driver.findElement(By.xpath("//td[@id='22']")).click();
+        }
+       
+        
+        
+   */     
+        
+ /*       
+     
+        
+        
+        
+ // first row
+        
+        if(a[0][0]!=0 && a[0][1]!=0 && a[0][2]==0 )
+        {
+      	  driver.findElement(By.xpath("//td[@id='13']")).click();
+        }
+        if(a[0][0]!=0 && a[0][1]==0 && a[0][2]!=0 )
+        {
+      	  driver.findElement(By.xpath("//td[@id='12']")).click();
+        }
+        if(a[0][0]==0 && a[0][1]!=0 && a[0][2]!=0 )
+        {
+      	  driver.findElement(By.xpath("//td[@id='11']")).click();
+        }
+
+
+         // second row
+        if(a[1][0]!=0 && a[1][1]!=0 && a[1][2]==0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='23']")).click();
+        }
+        if(a[1][0]!=0 && a[1][1]==0 && a[1][2]!=0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='22']")).click();
+        }
+        if(a[1][0]==0 && a[1][1]!=0 && a[1][2]!=0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='21']")).click();
+        }
+
+
+
+      // third row
+        if(a[2][0]!=0 && a[2][1]!=0 && a[2][2]==0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='33']")).click();
+        }
+        if(a[2][0]!=0 && a[2][1]==0 && a[2][2]!=0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='32']")).click();
+        }
+        if(a[2][0]==0 && a[2][1]!=0 && a[2][2]!=0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='31']")).click();
+        }
+
+
+
+         // first column
+
+         if(a[0][0]!=0 && a[1][0]!=0 && a[2][0]==0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='31']")).click();
+        }
+        if(a[0][0]==0 && a[1][0]!=0 && a[2][0]!=0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='11']")).click();
+        }
+        if(a[0][0]!=0 && a[1][0]==0 && a[2][0]!=0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='21']")).click();
+        }
+
+
+// second column
+
+         if(a[0][1]!=0 && a[1][1]!=0 && a[2][1]==0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='32']")).click();
+        }
+        if(a[0][1]==0 && a[1][1]!=0 && a[2][1]!=0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='12']")).click();
+        }
+        if(a[0][1]!=0 && a[1][1]==0 && a[2][1]!=0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='22']")).click();
+        }
+
+
+// third column
+
+         if(a[0][2]!=0 && a[1][2]!=0 && a[2][2]==0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='33']")).click();
+        }
+        if(a[0][2]==0 && a[1][2]!=0 && a[2][2]!=0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='13']")).click();
+        }
+        if(a[0][2]!=0 && a[1][2]==0 && a[2][2]!=0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='23']")).click();
+        }
+
+//  first diagonal  \
+
+         if(a[0][0]!=0 && a[1][1]!=0 && a[2][2]==0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='33']")).click();
+        }
+        if(a[0][0]==0 && a[1][1]!=0 && a[2][2]!=0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='11']")).click();
+        }
+        if(a[0][0]!=0 && a[1][1]==0 && a[2][2]!=0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='22']")).click();
+        }
+
+
+//  second diagonal  /
+
+         if(a[0][2]!=0 && a[1][1]!=0 && a[2][0]==0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='31']")).click();
+        }
+        if(a[0][2]==0 && a[1][1]!=0 && a[2][0]!=0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='13']")).click();
+        }
+        if(a[0][2]!=0 && a[1][1]==0 && a[2][0]!=0)
+        {
+      	  driver.findElement(By.xpath("//td[@id='22']")).click();
+        }
+        */
+        
 	}
 
 	
@@ -325,29 +768,16 @@ for(int j=1;j<=3;j++)
 
 		String human="Human (Player 1)";
 		String tap="TAP (Player 2)";
-		
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		TicTacToe5 ttt1=new TicTacToe5();
 		
 		while (true) {
 
 			if (driver.findElement(By.xpath("//span[@id='turn']")).getText().equals(tap)) {
 
-		/*		List<WebElement> links = driver.findElements(By.xpath("//td"));
-
-				// select a random one
-				Random gen = new Random();
-				WebElement link = links.get(gen.nextInt(links.size()));
-				System.out.println(gen.nextInt(links.size()));
-				link.click();
-		*/		
-			//	WebDriverWait wait = new WebDriverWait(driver, 10);
-			//	wait.until(ExpectedConditions.textToBe(By.xpath("//span[@id='turn']"), "TAP (Player 2)"));
-
-				TicTacToe5 ttt1=new TicTacToe5();
 				
 				ttt1.logic(driver, a);
-				WebDriverWait wait = new WebDriverWait(driver, 20);
-				wait.until(ExpectedConditions.textToBe(By.xpath("//span[@id='turn']"), "TAP (Player 2)"));
-				ttt1.increment(driver, a);		
+				ttt1.increment(driver, a);	
 				ttt1.printArray(a);
 
 				if (driver.findElement(By.xpath("//span[@id='turn']")).getText().equals("TAP Won!!")) {
@@ -364,17 +794,34 @@ for(int j=1;j<=3;j++)
 					ttt1.printArray(a);
 					break;
 				}
-				
-		/*		if(ttt.isWin(a))
-				{
-					break;
-				}
-*/
 			}
+			else {
+				
+		//	       wait.until(ExpectedConditions.textToBe(By.xpath("//span[@id='turn']"),"TAP (Player 2)"));
+				wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//span[@id='turn']"),"TAP (Player 2)"));
+				ttt1.logic(driver, a);
+				   ttt1.increment(driver, a);	
+				   ttt1.printArray(a);
+
+					if (driver.findElement(By.xpath("//span[@id='turn']")).getText().equals("TAP Won!!")) {
+						ttt1.printArray(a);
+						break;
+
+					}
+					if (driver.findElement(By.xpath("//span[@id='turn']")).getText().equals("Its a tie!!")) {
+						ttt1.printArray(a);
+						break;
+
+					}
+					if (driver.findElement(By.xpath("//span[@id='turn']")).getText().equals("Human Won!!")) {
+						ttt1.printArray(a);
+						break;
+					}
+				
+			}
+	         
 		}
 
-			
-			
 			driver.close();
 			
 		}

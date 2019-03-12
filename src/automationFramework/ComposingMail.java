@@ -20,6 +20,7 @@ public class ComposingMail {
 		String url = "https://accounts.google.com/signin";
 		driver.get(url);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); 
+		
 		WebElement email_phone = driver.findElement(By.xpath("//input[@id='identifierId']"));
 		email_phone.sendKeys("enter your email here");
 		driver.findElement(By.id("identifierNext")).click();
@@ -29,7 +30,6 @@ public class ComposingMail {
 		password.sendKeys("enter your password here");
 		driver.findElement(By.id("passwordNext")).click();
 		driver.findElement(By.xpath("//div[contains(text(),'COMPOSE')]")).click();
-		
 		
 	}
 }
